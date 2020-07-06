@@ -60,8 +60,24 @@ The application is subdivided into two parts, the client part and the server one
 # L A U N C H  -- T H E  -- A P P L I C A T I O N 
 ------------------------------------------------------------------------------------------------
 
-	* In case of using on two PC 		> 	You must coonect the both hosts on the same ccess point (you can use Smartphone to create the access point)
+	* In case of using on two PC 		> 	You must connect the both hosts on the same access point (you can use Smartphone to create the access point)
 
-	* Run the serveur rmi.RMIServeur	>	Put the server IP in the Network, the Databas access (login , password and  server port) Default port is 5432
+	* Run the server 			>	Put the server IP in the Network, the Database access (login , password and  server port) Default port is 5432
+		
+		- cmd > cd ..\Serveur\src\rmi
+		- cmd > ..\Serveur\src\rmi>javac *.java
+		- cmd > ..\Serveur\src\rmi> cd ..
+		- cmd > ..\Serveur\src> start rmiregistry -J-Djava.security.policy=fichier.policy
+		- cmd > ..\Serveur\src>java rmi.RMIServeur
+		
+		[replace `..` by the server project absolute path]
 
-	* Run the client client.client		>	Give server IP, rmi access port and the current account numRef 
+	* Run the client			>	Give server IP, rmi access port and the current account numRef 
+
+		- cmd > cd ..\Serveur\src\rmi
+		- cmd > ..\Serveur\src\rmi>javac *.java
+		- cmd > ..\Serveur\src\rmi> cd ..
+		- cmd > ..\Serveur\src> start rmiregistry -J-Djava.security.policy=fichier.policy
+		- cmd > ..\Serveur\src>java rmi.RMIServeur
+		
+		[replace `..` by the client project absolute path]

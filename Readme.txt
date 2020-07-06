@@ -73,12 +73,15 @@ The application is subdivided into two parts, the client part and the server one
 		
 		[replace `..` by the server project absolute path]
 
+		Now the server start
+
 	* Run the client			>	Give server IP, rmi access port and the current account numRef 
 
-		- cmd > cd ..\Serveur\src\rmi
-		- cmd > ..\Serveur\src\rmi>javac *.java
-		- cmd > ..\Serveur\src\rmi> cd ..
-		- cmd > ..\Serveur\src> start rmiregistry -J-Djava.security.policy=fichier.policy
-		- cmd > ..\Serveur\src>java rmi.RMIServeur
+		- cmd > cd ..\client\src\rmi
+		- cmd > ..\client\src\rmi>javac *.java
+		- cmd > ..\client\src\rmi> cd ..
+		- cmd > ..\client\src> java rmi.Client 
 		
 		[replace `..` by the client project absolute path]
+
+		Now the client start

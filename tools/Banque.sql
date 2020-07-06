@@ -5,7 +5,7 @@
 -- Dumped from database version 12.3
 -- Dumped by pg_dump version 12.3
 
--- Started on 2020-07-06 19:18:45
+-- Started on 2020-07-07 00:16:42
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -38,7 +38,6 @@ CREATE TABLE public.client (
 
 
 ALTER TABLE public.client OWNER TO postgres;
-
 
 --
 -- TOC entry 204 (class 1259 OID 24598)
@@ -79,9 +78,8 @@ ALTER TABLE public.compte_seq OWNER TO postgres;
 
 CREATE TABLE public.transaction (
     _id integer NOT NULL,
-    transactionid integer NOT NULL,
     reforigine character varying(128) NOT NULL,
-    refdestination character varying(128) NOT NULL,
+    refdestination character varying(128),
     montant double precision NOT NULL,
     datetransaction timestamp(0) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     type character varying(32) NOT NULL
@@ -91,7 +89,7 @@ CREATE TABLE public.transaction (
 ALTER TABLE public.transaction OWNER TO postgres;
 
 --
--- TOC entry 207 (class 1259 OID 32779)
+-- TOC entry 206 (class 1259 OID 32779)
 -- Name: transaction__id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -106,44 +104,7 @@ ALTER TABLE public.transaction ALTER COLUMN _id ADD GENERATED ALWAYS AS IDENTITY
 
 
 --
--- TOC entry 206 (class 1259 OID 32777)
--- Name: transaction_transactionid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-ALTER TABLE public.transaction ALTER COLUMN transactionid ADD GENERATED ALWAYS AS IDENTITY (
-    SEQUENCE NAME public.transaction_transactionid_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1
-);
-
-
-
-SELECT pg_catalog.setval('public.compte_seq', 8, false);
-
-
---
--- TOC entry 2851 (class 0 OID 0)
--- Dependencies: 207
--- Name: transaction__id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.transaction__id_seq', 5, true);
-
-
---
--- TOC entry 2852 (class 0 OID 0)
--- Dependencies: 206
--- Name: transaction_transactionid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.transaction_transactionid_seq', 6, true);
-
-
---
--- TOC entry 2702 (class 2606 OID 24609)
+-- TOC entry 2700 (class 2606 OID 24609)
 -- Name: client client_code_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -152,7 +113,7 @@ ALTER TABLE ONLY public.client
 
 
 --
--- TOC entry 2704 (class 2606 OID 24607)
+-- TOC entry 2702 (class 2606 OID 24607)
 -- Name: client client_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -161,7 +122,7 @@ ALTER TABLE ONLY public.client
 
 
 --
--- TOC entry 2706 (class 2606 OID 24613)
+-- TOC entry 2704 (class 2606 OID 24613)
 -- Name: compte compte_numref_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -170,7 +131,7 @@ ALTER TABLE ONLY public.compte
 
 
 --
--- TOC entry 2708 (class 2606 OID 24611)
+-- TOC entry 2706 (class 2606 OID 24611)
 -- Name: compte compte_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -179,7 +140,7 @@ ALTER TABLE ONLY public.compte
 
 
 --
--- TOC entry 2710 (class 2606 OID 24615)
+-- TOC entry 2708 (class 2606 OID 24615)
 -- Name: transaction transaction_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -187,16 +148,7 @@ ALTER TABLE ONLY public.transaction
     ADD CONSTRAINT transaction_pkey PRIMARY KEY (_id);
 
 
---
--- TOC entry 2712 (class 2606 OID 24617)
--- Name: transaction transaction_transactionid_key; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.transaction
-    ADD CONSTRAINT transaction_transactionid_key UNIQUE (transactionid);
-
-
--- Completed on 2020-07-06 19:18:45
+-- Completed on 2020-07-07 00:16:43
 
 --
 -- PostgreSQL database dump complete

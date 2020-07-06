@@ -40,7 +40,7 @@ public class RMIServeur {
                     ip =InetAddress.getLocalHost().toString();
                 }
 
-                LocateRegistry.createRegistry(1099);
+                
                 RMIOperations rmio = new RMIOperations(pwd, login, port);
 
                 Naming.rebind("rmi://"+ip+":1099/OperationBanque",rmio);

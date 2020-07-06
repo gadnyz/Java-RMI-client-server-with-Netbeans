@@ -5,8 +5,7 @@
  */
 package rmi;
 
-import DAO.OperationCompteDAO;
-import Metier.Transaction;
+
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -14,7 +13,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author Dell
  */
-public class RMIOperations extends UnicastRemoteObject implements Interface.CompteInterface{  
+public class RMIOperations extends UnicastRemoteObject implements CompteInterface{  
     private  OperationCompteDAO compteDAO = null;
     private final  Transaction transaction = new Transaction();
 

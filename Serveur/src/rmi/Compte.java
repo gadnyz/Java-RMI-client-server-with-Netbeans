@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Metier;
 
+package rmi;
+ 
 import java.rmi.RemoteException;
 import java.util.Date;
 

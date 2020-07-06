@@ -32,6 +32,8 @@ The application is subdivided into two parts, the client part and the server one
 
 	* Database : Postegres 12
 
+	* GITHUB Repository > https://github.com/gadnyz/Java-RMI-client-server-with-Netbeans
+
 
 
 ------------------------------------------------------------------------------------------------

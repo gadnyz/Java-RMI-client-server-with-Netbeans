@@ -6,7 +6,7 @@ The goal of this mini project is to master the RMI technology and develop an app
 
 	Author		:	GAD NYUMBAIZA (gadnyumbaiza@gmail.com)
 
-	Date		:	26 Juin 2020
+	Date		:	June 26, 2020
 
 ------------------------------------------------------------------------------------------------
 # T H E --  G O A L
@@ -28,7 +28,7 @@ The application is subdivided into two parts, the client part and the server one
 
 	* IDE : Netbeans 8.2
 
-	* JDK 8.2
+	* java version "1.8.0_91"
 
 	* Database : Postegres 12
 
